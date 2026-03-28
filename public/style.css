@@ -1,3 +1,5 @@
+@import "./theme.css";
+
 /* Register --color as animatable */
 @property --color {
   syntax: '<color>';
@@ -569,6 +571,3 @@ html[data-collection="unfiltered"] .landing-body { color: #aaa; }
   transition: color 150ms;
 }
 .cw-remember:hover label { color: #888; }
-
-
-@import "./theme.css";
