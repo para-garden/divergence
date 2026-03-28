@@ -1,5 +1,5 @@
 {
-  description = "legacy - worldbuilding project";
+  description = "divergence - worldbuilding project";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
