@@ -16,7 +16,7 @@ export const siteConfig = {
   /** Display name shown in title bars and landing page. */
   name: "divergence",
   /** Full domain for og:url and og:site_name. */
-  domain: "divergence.paragarden.world",
+  domain: "para.garden",
   /** Base path for deployment (no trailing slash). E.g. "/divergence" if served at /divergence/. */
   basePath: "/divergence",
   /** ID of the meta/landing node (default collection). */

@@ -20,7 +20,7 @@ Forked from ptera.world's engine, same as legacy. See legacy's CLAUDE.md and pte
 
 Key configuration:
 - One collection: `default` (the world)
-- Site config: `name: "divergence"`, `domain: "divergence.paragarden.world"`, `metaNodeId: "meta/divergence"`
+- Site config: `name: "divergence"`, `domain: "para.garden"`, `metaNodeId: "meta/divergence"`
 - World content in `public/content/world/`
 
 ## Commands

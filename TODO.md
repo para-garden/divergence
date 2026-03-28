@@ -4,20 +4,41 @@
 
 The world needs its first nodes. Start intimate — one person's tuesday, not a system overview.
 
-- [ ] **Daphne** — the person who grew plants on her windowsill because she liked how they smell. what her building looks like, what her tuesday is.
-- [ ] **Bob** — the monitor in the courtyard, definitely not by accident. the live chat. ACNH. who bob is.
-- [ ] **The building with the quad** — the interior courtyard, the shared garden below, daphne's plants trailing down from four floors up, bob's screen facing it.
-- [ ] **The bakery** — not a character study, just the place. what it smells like. who's usually there. the relationship between the baker and the person who fixed the oven.
-- [ ] **A fox crossing the road** — not a vignette, just a moment. the city didn't eat everything.
+- [ ] **Daphne** — grew plants on her windowsill because she likes how they smell. not a design statement. her building, her tuesday, the plants trailing past the door because she let them keep going.
+- [ ] **Bob** — the monitor facing the courtyard, definitely not by accident. the live chat in the corner also not by accident. ACNH on the big shared screen also not by accident. who bob is.
+- [ ] **Jared** — spraycans on the exterior wall of his balcony. not ugly, not beautiful, just specifically jared's.
+- [ ] **The building with the quad** — interior courtyard, shared garden at ground level, shops on middle floors (not just ground floor), some floors with skylights, bob's screen facing the quad, daphne's plants trailing down from four floors up. some buildings have this, some don't. this one does.
+- [ ] **The bakery** — the place, not a character study. what it smells like. why it's viable (enough people walk past). the relationship between the baker and the person who fixed the oven last spring.
+- [ ] **A fox crossing the road** — a moment, not a vignette. nobody makes it weird.
+- [ ] **The big screen in the courtyard** — someone put it up because they thought it was funny. opened it so anyone can cast to it. now it belongs to the courtyard. sometimes three people argue about what to put on. sometimes someone just starts playing music.
+
+## World specifics to flesh out
+
+- [ ] **Education** — no school. places where kids are and things are happening. waldorf-but-not-waldorf. the neighbor who likes kids and has space, and another parent who hangs around just in case. the credential system not gatekeeping survival = the whole apparatus becomes unnecessary.
+- [ ] **Healthcare** — just an appointment you go to. not because you're forced to. things get caught earlier. the texture of a doctor who's seeing mostly manageable things instead of mostly crises.
+- [ ] **Work** — what's left when the filler jobs are gone. fixing things, making food, drawing, singing. care work counting. nothing monoculture'd.
+- [ ] **The internet** — writable surfaces, pages that look different from each other, places you visit. no feed-as-primary-social-environment because the local has gravity. drama exists but doesn't travel the way it travels now — no system subsidizing it. channel pages. bob's page.
+- [ ] **Buildings** — vertical mixed-use. bakery on ground floor, shops on middle floors, apartments throughout. skylights because free light. plants because light and windowsills. spraycans because jared. none of it coordinated. variety is the sign it's real.
+- [ ] **Plastic packaging** — gone or mostly gone. shorter supply chains, more trust between producer and seller, less need to individually wrap everything for a warehouse that never touches it.
+- [ ] **Bureaucracy** — mostly evaporated. means-testing and eligibility verification exist to gatekeep survival. when the floor is solid, most of that disappears.
 
 ## World infrastructure
 
+- [x] **Initial scaffold** — repo created, CLAUDE.md with full world description, meta node, site-config
 - [ ] **Cluster configs** — define initial clusters for people, places, moments
-- [ ] **First commit + GitHub repo** — create para-garden/divergence, push
+- [ ] **GitHub repo** — create para-garden/divergence, push
 
 ## Open worldbuilding questions
 
-- [ ] What year is it? (Legacy is 2032 — divergence is probably same-ish timeframe, different fork)
-- [ ] What does "lumen in divergence" look like? (In legacy, lumen exists because noa got lucky. In divergence, the underlying need may be different.)
-- [ ] Characters beyond daphne and bob — who else lives in this building? who tends the quad garden?
-- [ ] What does a bad day look like? (The world isn't perfect — people argue, things break, someone's having a hard time. The texture of difficulty when survival isn't the argument.)
+- [ ] What year is it? (Legacy is 2032 — divergence probably same timeframe, different fork)
+- [x] What does "lumen in divergence" look like? — lumen is the OS. the writable page, the graph filesystem, files that are yours and readable without any app. in legacy, lumen is a principled refusal and a miracle of individual circumstance. in divergence, it's just how software works. lumen in legacy is remarkable. lumen in divergence is tuesday.
+- [ ] Who else lives in this building? who tends the quad garden?
+- [ ] What does a bad day look like? people argue, things break, someone's having a hard time. the texture of difficulty when survival isn't the argument.
+- [ ] The conflict genre — aesthetic disagreements, competing goods, no clear villain. the bakery expansion. jared's wall. the courtyard screen schedule. need at least one worked example.
+
+## Writing principles to remember
+
+- Stay intimate. one person's tuesday. if the document is explaining how the world works from outside, it's wrong.
+- Documents written from *inside* a life that's fine just read as fine — not as survival, not as relief. that's the texture legacy can't have.
+- The variety is the sign it's real. nobody was coordinating. don't make it feel designed.
+- Cyberpunk's intimacy comes from wall-watching stopping being useful. divergence's intimacy: the floor being solid means attention goes to people not because of desperation but because there's nowhere more interesting to put it.
