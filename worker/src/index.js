@@ -1,17 +1,17 @@
-const PAGES_ORIGIN = "https://legacy-jtf.pages.dev";
+const PAGES_ORIGIN = "https://divergence-5ax.pages.dev";
 
 export default {
   async fetch(request) {
     const url = new URL(request.url);
 
-    // Redirect /legacy to /legacy/ so relative paths resolve correctly
-    if (url.pathname === "/legacy") {
-      url.pathname = "/legacy/";
+    // Redirect /divergence to /divergence/ so relative paths resolve correctly
+    if (url.pathname === "/divergence") {
+      url.pathname = "/divergence/";
       return Response.redirect(url.toString(), 301);
     }
 
-    // Strip /legacy prefix and fetch from Pages
-    const path = url.pathname.replace(/^\/legacy/, "") || "/";
+    // Strip /divergence prefix and fetch from Pages
+    const path = url.pathname.replace(/^\/divergence/, "") || "/";
     const pagesUrl = new URL(path + url.search, PAGES_ORIGIN);
 
     const response = await fetch(pagesUrl, {

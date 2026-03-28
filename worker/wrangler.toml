@@ -1,8 +1,8 @@
-name = "legacy-router"
+name = "divergence-router"
 main = "src/index.js"
 compatibility_date = "2025-01-01"
 
 routes = [
-  { pattern = "para.garden/legacy", zone_name = "para.garden" },
-  { pattern = "para.garden/legacy/*", zone_name = "para.garden" },
+  { pattern = "para.garden/divergence", zone_name = "para.garden" },
+  { pattern = "para.garden/divergence/*", zone_name = "para.garden" },
 ]
