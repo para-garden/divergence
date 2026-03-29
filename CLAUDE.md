@@ -57,6 +57,12 @@ The variety is the sign it's real. Nobody was coordinating.
 
 No highways except when you actually need to go far. The default isn't speed — you're already where you're going. The street isn't infrastructure for cars that happens to have people on it. Animals cross the road because the city didn't eat everything.
 
+Most people don't have cars. Not as a virtue or a sacrifice — just not necessary when the city is actually the city. When you're outside you're present, not in transit. Most time outside is being somewhere, not getting somewhere.
+
+Farms are in the city. Not "urban farms" as a project — just farms, because the city wasn't entirely paved over. A field is fifteen minutes' walk. The plums came from down the road. The fox has somewhere to have come from. Sometimes there's things growing on roofs because someone wanted tomatoes, not because of an initiative.
+
+Supply chains are short because distances are short. The produce arrived this morning. Seasonal means actually seasonal. Less packaging because less transit and warehousing. The economy is legible at the local level — things have a source you could name if you wanted to.
+
 ### The internet
 
 The web is a place you visit, not a feed you swim in. Platforms exist but aren't load-bearing — the local is real enough to have gravity against a fully connected world. Pages look different from each other because they're writable surfaces someone made their own. You visit them. They're places.
@@ -73,6 +79,20 @@ No school. Places where kids are and things are happening and adults are doing t
 
 Opinions. Real competing goods, no clear villain. The building that wants to expand. The wall that someone painted something the neighbors find ugly. Aesthetic disagreements are the main genre of conflict because aesthetic disagreements are what you have when survival isn't the argument.
 
+### Technology and supply chains
+
+Hardware exists and requires scale — mining, fabrication, manufacturing. But the organizational form is different. No engagement economy means no trillion-dollar incentive to own the whole stack.
+
+Supply chains are networks of independent actors who communicate laterally — the mine is just a mine, the refinery is just a refinery, they have ongoing relationships and talk to each other when something changes. The chain is legible to the people in it. No vertical integration, no single company owning mine-to-consumer.
+
+Infrastructure that requires initial scale (a fab, a rail network) gets bootstrapped through public or quasi-public coordination — someone has to organize the capital. After it's built, maintenance is handled by the people who use and depend on it. Collective ownership not as ideology but as practical consequence: if your refinery depends on the fab, you have skin in keeping it running.
+
+Devices are tools, not platforms. More like appliances — standardized, made by various manufacturers, not locked ecosystems. They last because there's no planned obsolescence and no "new model every year" pressure. The software layer is infrastructure, not a product someone owns — open, writable, yours. It doesn't have a special name because it doesn't need one.
+
+### Place names
+
+Place names come from what's actually there — descriptive, not commemorative. Not named after dead people, not after colonized land, not after numbers. Named after the linden tree in the courtyard, the wide building on the corner, the one with the blue door. Names that emerged from use, not assignment. A place is called what it is.
+
 ### The nonhuman world
 
 Animals cross the road. The city didn't eat everything so there's space for the fox. Nobody makes it weird. It's just a fox.
@@ -84,6 +104,38 @@ In-world documents are written as if they exist inside the world — messages, p
 The intimate scale is load-bearing. Utopia zooms out — shows you the system, the solved infrastructure, the gleaming city — and loses the person. Divergence stays close. One person's tuesday. The baker who doesn't check the zoning variance because the zoning was never wrong. The parent who didn't start the college fund. The garden that's just a garden. Nothing dramatic. A life being lived instead of optimized.
 
 If the document could be a civics lesson, it's the wrong document.
+
+### Vocabulary that doesn't exist here
+
+Words exist for navigating systems with stakes, rules, and consequences. When the stakes change, the words lose their load. In divergence, watch for imported vocabulary:
+
+- **adulting** — no referent. becoming an adult means you have more say in where you are and what you do.
+- **self-care** — you just live. maintaining yourself isn't a category requiring intervention.
+- **networking** — you meet people. connection isn't instrumental career infrastructure.
+- **hustle / side hustle / grind** — optimizing yourself as an extractable resource. gone.
+- **career** — the path you navigate to secure survival through work. work is just what you do.
+- **content** — what you make when making it to be consumed at scale. nobody's making content.
+- **brand** — legible, optimized self-presentation for reach. nobody has one.
+- **boundaries** — lighter, because the conditions that make extraction the default are lighter.
+- **monogamy / polyamory / relationship status** — no organizing vocabulary for coupling structures. people are just with people.
+- **first base / second base** — no scoreboard for a negotiation that isn't a negotiation.
+- **coming out** — when queerness isn't default-assumed-wrong, the ritual of declaring it changes shape.
+
+When writing: Jared doesn't have a "practice." Ines doesn't talk about "outcomes." They just do the thing.
+
+### Relationships
+
+No word for monogamy — not really. Relationship structures are varied, personal, unremarkable. Nobody signals their configuration because it's not a category that organizes social life. Like "adulting," the word exists because the thing it describes is an ordeal; remove the ordeal and the word loses its referent.
+
+No legal or financial weight to relationship structure. Healthcare isn't attached to a partner. Tax filing is individual, no couples incentives. Formalization (ceremony, paperwork) is purely personal — done if wanted, skipped if not, neither option carrying judgment. "Partner" means the person you're with. Nothing more is implied.
+
+Even "relationship" is doing too much work — it's a category word for a world organized around couples as the primary social unit. Same with "base" vocabulary — that's a scoring system for a negotiation with rules. In divergence people are just with people in whatever way they are. No scoreboard, no category, no status to declare.
+
+When writing: describe the concrete fact. Marta and someone share a space and keep different hours. Don't name what kind of thing it is.
+
+### Connection
+
+Connection is a byproduct of shared space, not a product of a single mechanism. The bakery, the stairwell, the courtyard, the corner while you wait for coffee — these all do it. Nobody organized it. The courtyard screen isn't what brings people together; the building does, the block does, the spaces between do. People who live near each other have probably already exchanged words — just not the kind that registered as a thing happening.
 
 ## Facets
 
