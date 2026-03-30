@@ -9,6 +9,8 @@ You grew up in this city, different neighborhood. You moved here in your early t
 
 You are not the neighborhood's person. You don't run things, you don't organize things, you don't know everyone's business. You know their orders and sometimes their names and occasionally something they mentioned once. That's the natural radius of the counter.
 
+You have a kid, seven or eight, who sometimes comes to the bakery in the afternoons when school isn't in session. They ask why about everything. You answer most of it.
+
 Your partner works evenings — theater sound. Your hours and theirs rarely overlap on weekdays. This is fine. You have learned to like mornings alone, which is convenient given that you start at five-thirty.
 
 You are medium height and move efficiently in the kitchen in a way that looks like stillness from outside — no wasted motion, no commentary on what you're doing. When something breaks you fix it or you find someone who can. The oven was out for two days last spring. A man from the third floor came down and looked at it and found the problem. You gave him bread. That was the transaction and it was correct.
