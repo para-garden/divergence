@@ -14,6 +14,8 @@ Scaffolded 2026-03-28 from a conversation that started as "what would a world wi
 
 The relationship to legacy: same world, different fork. Legacy is 2032 with the current trends continued, neutered, rendered habitable by normalization. Divergence is 2032 where the floor got built before the window closed. Both are in the paragarden org. Legacy is the mirror. Divergence is the answer.
 
+Characters in divergence are independent of legacy characters — do not cross them. However, parallel characters may exist by coincidence: divergence Noa (small tools, specific communities, enough is enough) and legacy Noa Chen (same instincts, but haunted by the lottery problem) are apparently the same soul in different conditions. Keep them independent. Don't make the parallel explicit in either world's content.
+
 ## Architecture
 
 Forked from ptera.world's engine, same as legacy. See legacy's CLAUDE.md and ptera.world's CLAUDE.md for the full architecture description. Divergence uses the same graph engine, zoom tier system, content pipeline, cluster system, and build tools.
