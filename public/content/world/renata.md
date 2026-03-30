@@ -3,6 +3,7 @@ label: "Renata"
 description: "seventy-one, loud knees, doesn't mind stairs"
 tags: [ordinary, presence, tending]
 collections: [default]
+related: [renatas-page, renata-thursday, the-pool, the-neighborhood-over-time, courtyard-building, the-proposal]
 ---
 
 Renata has been waking up at five for forty years and sees no reason to stop now.

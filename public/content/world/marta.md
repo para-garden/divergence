@@ -3,7 +3,7 @@ label: "Marta"
 description: "the bakery, eleven years, knows your order"
 tags: [ordinary, proximity, tending]
 collections: [default]
-related: [bakery]
+related: [bakery, marta-daughter, bakery-morning, courtyard-building]
 ---
 
 Eleven years on this block. I took over from a man named Georg who wanted to go to Portugal. He gave me a week of handoff and I've been here since.

@@ -3,7 +3,7 @@ label: "the courtyard building"
 description: "interior courtyard, six floors, inhabited"
 tags: [texture, proximity, specificity]
 collections: [default]
-related: [bakery]
+related: [bakery, the-linden, daphne, bob, jared, marta, kofi, renata, friday-film, mandarin, priya-leaves, moving-in, rooftop, the-midsummer-thing, from-the-street, the-proposal]
 ---
 
 Six floors. Bakery on the corner at ground level, two floors of flats above it, a tailor on the fourth, three more above that. Nothing unusual for the block.

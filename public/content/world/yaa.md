@@ -3,7 +3,7 @@ label: "Yaa"
 description: "eighteen, fabrication workshop, whole opinion about the cooling fans"
 tags: [ordinary, specificity, invention]
 collections: [default]
-related: [tamale-market-morning]
+related: [tamale-market-morning, yaa-later, the-workshop]
 ---
 
 Yaa has an opinion about the cooling fans on the old Prusa printers and she isn't shy about sharing it. Rattly. "Like a bee stuck in a cup," she told Kwame when he asked, and he laughed, and now that's what everyone calls it: the bee-cup sound. She likes that it stuck.

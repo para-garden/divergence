@@ -3,7 +3,7 @@ label: "Ines"
 description: "seven kids, one table, the amount adjusts"
 tags: [ordinary, connection, proximity]
 collections: [default]
-related: [daphne]
+related: [daphne, daphne-at-ines, bea, bea-and-the-shelf, the-disagreement]
 ---
 
 The kids come Tuesday and Thursday and every other Friday. We started two years ago with four of them — now there are seven, which is the most the table fits without someone sitting on the counter, which Luca does on purpose.

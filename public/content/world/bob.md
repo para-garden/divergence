@@ -3,7 +3,7 @@ label: "Bob"
 description: "second floor, monitor in the window, the courtyard screen"
 tags: [connection, ordinary, invention]
 collections: [default]
-related: [courtyard-building]
+related: [courtyard-building, daphne-and-bob, bob-working, bob-bad-day, courtyard-screen]
 ---
 
 the monitor's been in the window two years now. i angled it outward because the courtyard was empty and it seemed like a waste. people started waving. i waved back.

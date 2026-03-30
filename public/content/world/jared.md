@@ -3,7 +3,7 @@ label: "Jared"
 description: "fourth floor, balcony wall, the paint keeps not being finished"
 tags: [specificity, tending, texture]
 collections: [default]
-related: [courtyard-building]
+related: [courtyard-building, jared-morning, jared-on-site, the-wall-an-opinion, for-someone, it-worked]
 ---
 
 The balcony wall. I've been on it since about three weeks after I moved in — there's a corner on the left side where the morning light comes in at an angle and the first time I noticed it I had a roller in my hand before I'd really thought about it.

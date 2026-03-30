@@ -3,6 +3,7 @@ label: "Noa"
 description: "two hundred people use these, give or take"
 tags: [invention, ordinary, floor]
 collections: [default]
+related: [noa-window, noa-working, the-tool-working, he-came-back-out]
 ---
 
 The calendar thing started because the food collective kept losing track of who was taking the Thursday slot. Not a hard problem. I made a small thing that solved it. Someone asked if it could handle substitutions — it could, I added that. Someone asked if it could send reminders — I said maybe, thought about it, made it optional because not everyone wants notifications pinging them about vegetables.

@@ -3,7 +3,7 @@ label: "the linden"
 description: "it does the same thing every year and people notice every time"
 tags: [ordinary, presence, texture, tending]
 collections: [default]
-related: [courtyard-building, priya-leaves, friday-film]
+related: [courtyard-building, priya-leaves, friday-film, mandarin, the-midsummer-thing, delight, moving-in, february, spring, october-market]
 ---
 
 The linden in the courtyard flowers in July. It always has. There's not much to say about it except that when it happens the courtyard smells like that for about two weeks, which is long enough to forget you're noticing it, and then it's over.
