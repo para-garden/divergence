@@ -28,6 +28,12 @@ The world needs its first nodes. Start intimate — one person's tuesday, not a 
 - [ ] **Cluster configs** — define initial clusters for people, places, moments
 - [ ] **GitHub repo** — create para-garden/divergence, push
 
+## The web in divergence — real-world connection
+
+Divergence's writable web (pages that look different, places you visit, no feed-as-default) is a fictional consequence of the floor getting built. Crescent is the closest real-world equivalent: a runtime simple enough that the barrier to making something yours is effectively gone. Programs in PNG metadata, fully vendorable LuaJIT binaries, zero dependencies. Not AI generating the texture — giving people actual tools.
+
+The divergence web and the Crescent ecosystem are the same idea in different registers. Worth keeping in mind as both develop.
+
 ## Open worldbuilding questions
 
 - [ ] What year is it? (Legacy is 2032 — divergence probably same timeframe, different fork)
