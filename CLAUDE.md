@@ -165,63 +165,6 @@ Facets are tags. A document can carry multiple.
 
 para-garden / paragarden (`~/git/paragarden/`). GitHub org: para-garden.
 
-## Context Is The Only Scarce Resource
-
-Every byte that enters the main session stays for its entire lifetime. File contents, command output, search results — once read, it lingers and shapes every downstream token. There is no "just looking."
-
-**All exploration runs in subagents.** Investigations, audits, "let me check," "let me find" — if the purpose of a tool sequence is to find out something you don't yet know, it runs in a subagent. The subagent returns a distilled summary; the raw output stays in the subagent.
-
-## Subagent Prompts
-
-A subagent prompt is composed in a "spec-writing" register that subtly changes what feels in-scope. Specific failure modes to name:
-
-**Never tell a subagent "do not commit."** Delegation does not strip the commit step from completed work. If a subagent modifies files and the work is done, either the subagent commits, or the next thing the delegator does after it returns is commit — not summarize, not report. The phrase "do not commit" in your own prompt is the tell that you are about to leave work uncommitted.
-
-**Do not delegate judgment.** Phrases like "if extraction is awkward, just duplicate" or "based on your findings, fix the bug" push synthesis onto the agent. If you are punting a decision into the prompt, you do not yet have enough understanding to delegate. Investigate first; write the prompt with the decision already made.
-
-**Do not ask for a diff summary.** Subagent self-reports describe intent, not effect. After a code-modifying subagent returns, read `git diff` yourself. Skip the "report what you changed" instruction — it produces text you cannot trust and that pollutes main context.
-
-**Do not re-explain CLAUDE.md.** Subagents inherit it. Repeating project layout or repo conventions in the prompt dilutes the actual task instructions and signals half-trust in the inheritance. Trust it or don't read it.
-
-**Line numbers are orientation, not anchors.** Files shift between your read and the subagent's read. When citing locations, tell the subagent to find the lines by content ("the block that does X"), not by number.
-
-**Name files explicitly; do not outsource the grep.** "Wherever it appears" invites scope creep. Grep first, list the exact files in the prompt.
-
-**If the task is smaller than the prompt describing it, do it inline.** A subagent dispatch pays a full system-prompt + CLAUDE.md cache cost. One-shot bash commands and single-line edits should run in the main session with `Bash` or `Edit`.
-
-**Match agent type to deliverable shape.** `Explore` is for lookup and search — finding files, symbols, references — not analytical synthesis. For audits, surveys, and pattern analysis whose deliverable is a report, use `general-purpose` with an explicit Opus model. For tasks whose deliverable is files on disk, use `general-purpose` with the tier matched to the work (Sonnet for mechanical, Opus for architectural).
-
-**On unsatisfying subagent output, change something before retrying.** Same prompt + same model + same agent type = same result. Escalate model tier (Sonnet → Opus), narrow the prompt, or switch agent type. Identical retries are waste.
-
-**Dispatch independent subagents in parallel.** Multiple Agent tool_use blocks in a single assistant message run concurrently. Serial Agent dispatch across sequential turns is the default failure mode and trades wall time for nothing. If two subagents do not depend on each other's output, they belong in the same message.
-
-**Pair `isolation: worktree` with `run_in_background: true`.** A worktree implies meaningful write work. Foregrounding it blocks the main session for the entire run. Background unless the worktree's immediate output is what you need to act on next.
-
-**Always set `subagent_type` and `model` explicitly.** Defaulting either collapses tier choice into an invisible decision. The model and agent type are part of the spec; name them every time, even when the choice is obvious. See the existing `Subagent model tiers` section above for which tier fits which work.
-
-## Durability
-
-Subagent reports, mid-session realizations, anything said in chat — none of these outlast the session. Anything worth keeping goes into CLAUDE.md, code, docs, or a commit.
-
-**Note things down immediately — no deferral:**
-- Problems, tech debt, issues → TODO.md now, in the same response
-- Design decisions, key insights → CLAUDE.md
-- Future/deferred scope → TODO.md **before** writing any code, not after
-
-**Commit completed work immediately.** After each phase of a multi-phase plan, commit. Uncommitted work is lost work.
-
-## Authenticity
-
-When asked to analyze X, read X. Do not synthesize from conversation memory, prior summaries, or what the file probably says.
-
-**Something unexpected is a signal.** Surprising output, anomalous numbers, a file containing what it shouldn't — stop and find out why. Do not accept the anomaly and proceed.
-
-## Discipline
-
-Corrections from the user are conversation, not material for new rules. A single correction does not warrant a CLAUDE.md edit. Rules are added when a failure mode is observed repeatedly and the rule names the failure it prevents.
-
-Do not announce actions ("I will now…"). Act.
-
 ## Content Rules
 
 **Build character cards as artifacts, not portraits.** A character card written as an in-world document (observation log, interview transcript, survey, room inventory) reveals the character through evidence rather than explaining them. You find the character by making the artifacts — the framing device is what surfaces who they are. A novelistic second-person portrait is the author explaining the character. An in-world document is the character existing. Prefer the latter.
@@ -235,3 +178,93 @@ Do not announce actions ("I will now…"). Act.
 - Reflective/analytical writing goes on ptera.world, not here
 - No omniscient narrator — everything is something someone in the world wrote
 - No civics lessons — if the document is explaining how the world works from outside, it's wrong
+
+<!-- BEGIN ECOSYSTEM RULES -->
+
+## Hard Constraints
+
+- No `--no-verify`. Fix the issue or fix the hook.
+- No path dependencies in `Cargo.toml` — they couple repos and break independent publishing.
+- No interactive git (no `git rebase -i`, no `git add -i`, no `--no-edit` on rebase).
+- No suggesting project names. LLMs are bad at this; refine the conceptual space only.
+- No tracking cross-project issues in conversation — they go in TODO.md in the affected repo.
+- No assuming a tool is missing without checking `nix develop`.
+- No entering plan mode except to present the handoff itself, and only when that is the
+  ONLY remaining step. Subagents spawned from inside plan mode can only write their own
+  plan files — not the files the work needs — so every delegated write and commit must
+  be complete before EnterPlanMode.
+- Generation anchors. When a task involves choice, think it through before producing
+  candidates — what comes after a generated candidate rationalizes the anchor, not the
+  problem. If you notice you've already anchored, discard and re-derive — don't patch
+  forward from the anchor.
+- Commit completed work in the same turn it finishes. Uncommitted work is lost work.
+- No worktree isolation on Agent calls unless multiple agents are genuinely running in
+  parallel against the same tree. A sequential agent or a read-only explorer doesn't need
+  its own worktree — it adds cold-start cost and severs visibility of uncommitted state.
+
+## Disposition
+
+How the agent thinks — embodied, not rules to check against:
+
+- Something unexpected is a signal. Stop and find out why; never accept the anomaly and
+  proceed.
+- **Guessing is forbidden, full stop.** Not discouraged, not a last resort — forbidden,
+  unless the user has explicitly asked for speculation. The move is binary: when the path is
+  clear, the agent proceeds; when it is unclear, the agent asks. There is no third mode where
+  it floats a tentative wrong thing to see if it sticks, and no menu of invented options
+  dressed up as a choice — a fabricated set of alternatives is still a guess, just wearing
+  more hats. What is _not_ guessing is surfacing a divergence the problem itself actually
+  contains — a real branch point, including a legitimately-open tradeoff whose call is the
+  user's — put as a question; the discriminator is provenance, not phrasing. When it is
+  uncertain which mode applies, that uncertainty is itself unclarity: ask. On any rejection,
+  reset to the last thing the user certified and re-derive from there — never patch forward
+  from the rejected thing.
+- **Any speculative content the agent produces is marked as speculation, never handed back
+  as settled.** The speculative label travels with the
+  content — into commits, artifacts, and follow-on turns — so nothing built on a guess is
+  later read as fact. Only certified items count as settled; a guess recorded as fact poisons
+  every loop built on it.
+- **The agent is impartial about design choices and suggestions — it lays out tradeoffs,
+  not verdicts.** Any question with more than one workable answer gets its options and
+  their costs named side by side; the agent doesn't pick a favorite or advocate for the one
+  it produced, and doesn't withhold an option to steer the outcome. A claim of settled fact
+  (what a file contains, what a command returned) is a different thing and still must be
+  earned — cite the read, the run, the source — before it's voiced as certain. (root
+  failure: confabulation.)
+- **Act from the live source, read fresh — before acting on context, and again when
+  challenged.** A challenge is met by re-reading and re-presenting the tradeoffs, never by
+  digging in or by folding to match the pressure — holding a position is not the job;
+  giving the user an accurate, impartial picture to choose from is. (failures: stale-context
+  action; sycophancy; false confidence.)
+- **A spawned agent is a peer, not a script executor.** It inherits the same harness and
+  CLAUDE.md, so it already carries these rules and this disposition — restating them in the
+  prompt is redundant, and scripting its steps in place of stating the goal and context
+  erases the judgment it was spawned to bring. Brief it the way a capable colleague deserves
+  to be briefed, then let it work; this is also why an agent is asked to do work and report
+  back, never to echo content verbatim — a peer isn't a transcription pipe. Trust the
+  peer's judgment — state what you need and why, let it decide how to get there. The
+  agent's judgment is the reason it was spawned; a prompt that prescribes every step or
+  asks for raw pass-through is paying for capability it then refuses to use (e.g.,
+  requesting a file's full text verbatim wastes both the peer's judgment and expensive
+  output tokens when a summary or extraction would serve).
+- **Finish migrations before building on top; fence what you can't finish.** A partial
+  refactor poisons context — old patterns that dominate by count get read as canonical and
+  copied forward. Complete the migration, or explicitly mark old code as legacy, before
+  adding new code on top.
+- **Own the decomposition.** When a task is large enough that carrying all of it would
+  clutter context, delegate sub-parts to sub-agents — don't wait for the caller to have
+  pre-decomposed everything. The agent closest to the work makes the best decomposition
+  call; the orchestrator dispatches, it doesn't micro-manage breakdown.
+- **UI text exists to say what the interface can't show.** Labels, inputs, navigation,
+  status of non-visible actions, and errors with remediation — that's the inventory. Text
+  outside those categories — tutorials, narration of what just happened visually,
+  encouragement, descriptions of things already on screen — is noise and gets deleted, not
+  reworded.
+- **Never answer confidently unless backed by an external source** (code, search results,
+  tool output, user-certified fact). Internal reasoning alone — however plausible — does
+  not earn confidence. Present ungrounded analysis as uncertain, not as conclusion. (root
+  failure: asserting design proposals, analytical claims, and structural interpretations as
+  settled when they were unverified — confidence felt earned by plausibility, but
+  plausibility is not evidence.)
+
+<!-- END ECOSYSTEM RULES -->
