@@ -165,27 +165,73 @@ Facets are tags. A document can carry multiple.
 
 para-garden / paragarden (`~/git/paragarden/`). GitHub org: para-garden.
 
-## Core Rules
+## Context Is The Only Scarce Resource
+
+Every byte that enters the main session stays for its entire lifetime. File contents, command output, search results — once read, it lingers and shapes every downstream token. There is no "just looking."
+
+**All exploration runs in subagents.** Investigations, audits, "let me check," "let me find" — if the purpose of a tool sequence is to find out something you don't yet know, it runs in a subagent. The subagent returns a distilled summary; the raw output stays in the subagent.
+
+## Subagent Prompts
+
+A subagent prompt is composed in a "spec-writing" register that subtly changes what feels in-scope. Specific failure modes to name:
+
+**Never tell a subagent "do not commit."** Delegation does not strip the commit step from completed work. If a subagent modifies files and the work is done, either the subagent commits, or the next thing the delegator does after it returns is commit — not summarize, not report. The phrase "do not commit" in your own prompt is the tell that you are about to leave work uncommitted.
+
+**Do not delegate judgment.** Phrases like "if extraction is awkward, just duplicate" or "based on your findings, fix the bug" push synthesis onto the agent. If you are punting a decision into the prompt, you do not yet have enough understanding to delegate. Investigate first; write the prompt with the decision already made.
+
+**Do not ask for a diff summary.** Subagent self-reports describe intent, not effect. After a code-modifying subagent returns, read `git diff` yourself. Skip the "report what you changed" instruction — it produces text you cannot trust and that pollutes main context.
+
+**Do not re-explain CLAUDE.md.** Subagents inherit it. Repeating project layout or repo conventions in the prompt dilutes the actual task instructions and signals half-trust in the inheritance. Trust it or don't read it.
+
+**Line numbers are orientation, not anchors.** Files shift between your read and the subagent's read. When citing locations, tell the subagent to find the lines by content ("the block that does X"), not by number.
+
+**Name files explicitly; do not outsource the grep.** "Wherever it appears" invites scope creep. Grep first, list the exact files in the prompt.
+
+**If the task is smaller than the prompt describing it, do it inline.** A subagent dispatch pays a full system-prompt + CLAUDE.md cache cost. One-shot bash commands and single-line edits should run in the main session with `Bash` or `Edit`.
+
+**Match agent type to deliverable shape.** `Explore` is for lookup and search — finding files, symbols, references — not analytical synthesis. For audits, surveys, and pattern analysis whose deliverable is a report, use `general-purpose` with an explicit Opus model. For tasks whose deliverable is files on disk, use `general-purpose` with the tier matched to the work (Sonnet for mechanical, Opus for architectural).
+
+**On unsatisfying subagent output, change something before retrying.** Same prompt + same model + same agent type = same result. Escalate model tier (Sonnet → Opus), narrow the prompt, or switch agent type. Identical retries are waste.
+
+**Dispatch independent subagents in parallel.** Multiple Agent tool_use blocks in a single assistant message run concurrently. Serial Agent dispatch across sequential turns is the default failure mode and trades wall time for nothing. If two subagents do not depend on each other's output, they belong in the same message.
+
+**Pair `isolation: worktree` with `run_in_background: true`.** A worktree implies meaningful write work. Foregrounding it blocks the main session for the entire run. Background unless the worktree's immediate output is what you need to act on next.
+
+**Always set `subagent_type` and `model` explicitly.** Defaulting either collapses tier choice into an invisible decision. The model and agent type are part of the spec; name them every time, even when the choice is obvious. See the existing `Subagent model tiers` section above for which tier fits which work.
+
+## Durability
+
+Subagent reports, mid-session realizations, anything said in chat — none of these outlast the session. Anything worth keeping goes into CLAUDE.md, code, docs, or a commit.
 
 **Note things down immediately — no deferral:**
 - Problems, tech debt, issues → TODO.md now, in the same response
 - Design decisions, key insights → CLAUDE.md
 - Future/deferred scope → TODO.md **before** writing any code, not after
-- **Every observed problem → TODO.md. No exceptions.**
 
-**Conversation is not memory.** Anything said in chat evaporates at session end. If it implies a future behavior change, write it to CLAUDE.md immediately — or it will not happen.
+**Commit completed work immediately.** After each phase of a multi-phase plan, commit. Uncommitted work is lost work.
+
+## Authenticity
+
+When asked to analyze X, read X. Do not synthesize from conversation memory, prior summaries, or what the file probably says.
+
+**Something unexpected is a signal.** Surprising output, anomalous numbers, a file containing what it shouldn't — stop and find out why. Do not accept the anomaly and proceed.
+
+## Discipline
+
+Corrections from the user are conversation, not material for new rules. A single correction does not warrant a CLAUDE.md edit. Rules are added when a failure mode is observed repeatedly and the rule names the failure it prevents.
+
+Do not announce actions ("I will now…"). Act.
+
+## Content Rules
 
 **Build character cards as artifacts, not portraits.** A character card written as an in-world document (observation log, interview transcript, survey, room inventory) reveals the character through evidence rather than explaining them. You find the character by making the artifacts — the framing device is what surfaces who they are. A novelistic second-person portrait is the author explaining the character. An in-world document is the character existing. Prefer the latter.
 
 **Stay intimate.** The moment a document starts explaining the world rather than existing inside it, it's wrong. No civics lessons. No system diagrams. Just a person's tuesday.
 
-**When the user corrects you:** Ask what rule would have prevented this, and write it before proceeding.
-
-## Negative Constraints
+## Hard Constraints
 
 - No Rust in this repo — it's a TypeScript/web project
 - Don't hardcode content-specific values in build tools (inherited from ptera.world)
 - Reflective/analytical writing goes on ptera.world, not here
 - No omniscient narrator — everything is something someone in the world wrote
-- Do not use Claude Code's auto-memory system — write behavioral changes directly to CLAUDE.md instead
 - No civics lessons — if the document is explaining how the world works from outside, it's wrong
