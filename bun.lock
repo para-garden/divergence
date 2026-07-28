@@ -139,7 +139,7 @@
 
     "is-plain-obj": ["is-plain-obj@4.1.0", "", {}, "sha512-+Pgi+vMuUNkJyExiMBt5IlFoMyKnr5zhJ4Uspz58WOhBF5QoIZkFyNHIbBAtHwzVAgk5RtndVNsDRN61/mmDqg=="],
 
-    "keybinds": ["keybinds@github:pterror/keybinds#78dc230", {}, "pterror-keybinds-78dc230", "sha512-HzRvlPmOHkNsbhq1mrfp67fyCieVOnf5K+4VMlZpV5VsWvwYyZYiZ/rJ79predlijxjdwQ9BxKDbcRM/cdMzxg=="],
+    "keybinds": ["keybinds@github:pterror/keybinds#24529b7", {}, "pterror-keybinds-24529b7", "sha512-rUhzD8Bpy+65KXA29dqPDM7xKFce150s0RChshiufWHrT0omLep8AZRy+RIwzsTLnxjVjnXd2WzqHz8ZEau1Sw=="],
 
     "longest-streak": ["longest-streak@3.1.0", "", {}, "sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g=="],
 
