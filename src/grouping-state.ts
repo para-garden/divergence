@@ -2,20 +2,17 @@
  * Manages active grouping state and applies position changes to the graph.
  */
 
-import type { Graph, Node } from "./graph";
+import type { Graph } from "./graph";
 import { groupings, getGrouping, type Grouping } from "./groupings";
-import { updatePositions, animateTo, fadeOutRegions, fadeInRegions, snapNodePositions, nodeEls, worldEl, type NodePositionWithRegion } from "./dom";
-import type { Camera } from "./camera";
+import { updatePositions, fadeOutRegions, fadeInRegions, snapNodePositions, nodeEls, worldEl, type NodePositionWithRegion } from "./dom";
 
 let currentLayoutGrouping: Grouping | undefined = groupings[0];
 let currentColorGrouping: Grouping | undefined = groupings[0];
 let graphRef: Graph;
-let cameraRef: Camera;
 
-export function initGroupingState(graph: Graph, camera: Camera): void {
+export function initGroupingState(graph: Graph): void {
   if (groupings.length === 0) return;
   graphRef = graph;
-  cameraRef = camera;
 }
 
 export function getCurrentLayoutGrouping(): Grouping | undefined {

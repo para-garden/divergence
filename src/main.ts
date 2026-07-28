@@ -5,7 +5,7 @@ import { setupInput } from "./input";
 import { initPanel, openPanel } from "./panel";
 import { showCard, hideCard, getCurrentCardNode, setCardToggleFilter, setCardIsTagActive, setCardGetTagColor } from "./card";
 import { createFilter, buildFilterUI, applyFilter, getVisibleIds, setActive, updateFilterPillColors, addFilterPill, removeFilterPill } from "./filter";
-import { isAcknowledged, acknowledge, revoke, getCwTags, showGate, isNodeCwHidden } from "./content-gate";
+import { isAcknowledged, acknowledge, revoke, showGate, isNodeCwHidden } from "./content-gate";
 import { applyCwVisibility } from "./dom";
 import { runLayout } from "./layout";
 import { createFocusLayout } from "./focus-layout";
@@ -32,7 +32,7 @@ buildWorld(graph);
 applyCwVisibility(graph);
 
 // Initialize grouping state and restore from URL
-initGroupingState(graph, camera);
+initGroupingState(graph);
 restoreGroupingFromUrl();
 
 const filter = createFilter(graph.nodes);

@@ -1,6 +1,6 @@
 import { mkdir, readFile } from "node:fs/promises";
 import { parseMarkdown } from "./markdown";
-import { parseFrontmatter, stripFrontmatter } from "./frontmatter";
+import { parseFrontmatter } from "./frontmatter";
 import { siteConfig } from "./site-config";
 import { findMarkdownFiles, CONTENT_DIR } from "./content";
 
@@ -59,10 +59,7 @@ let count = 0;
 for (const { id, path } of files) {
   const raw = await readFile(path, "utf-8");
   const fm = parseFrontmatter(raw);
-  const md = stripFrontmatter(raw);
-  const { html } = parseMarkdown(md);
-  const format = typeof fm?.format === "string" ? fm.format : undefined;
-  const theme = typeof fm?.theme === "string" ? fm.theme : undefined;
+  const { html, format, theme } = parseMarkdown(raw);
 
   const title = fm?.label ?? id.split("/").pop() ?? id;
   const description = fm?.description?.replace(/\n/g, " ") ?? "";
